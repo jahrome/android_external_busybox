@@ -636,7 +636,7 @@ popen_ls(const char *opt)
 	 * which send e.g. "LIST -l", "LIST -la".
 	 * See https://bugs.kde.org/show_bug.cgi?id=195578 */
 	if (ENABLE_FEATURE_FTPD_ACCEPT_BROKEN_LIST
-	 && G.ftp_arg && G.ftp_arg[0] == '-' && G.ftp_arg[1] == 'l'
+	 && G.ftp_arg && G.ftp_arg[0] == '-' && G.ftp_arg[1] == 'a'
 	) {
 		const char *tmp = strchr(G.ftp_arg, ' ');
 		if (tmp) /* skip the space */
