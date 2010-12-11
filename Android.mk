@@ -68,7 +68,16 @@ $(SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $@
 	$(hide) ln -sf $(BUSYBOX_BINARY) $@
 
+SYMLINKS2 := $(TARGET_OUT)/bin/sh
+$(SYMLINKS2): BUSYBOX_BINARY := $(LOCAL_MODULE)
+$(SYMLINKS2): $(LOCAL_INSTALLED_MODULE)
+	@echo "Symlink: $@ -> $(BUSYBOX_BINARY2)"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf ../xbin/$(BUSYBOX_BINARY) $@
+
 ALL_DEFAULT_INSTALLED_MODULES += $(SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(SYMLINKS2)
 
 # We need this so that the installed files could be picked up based on the
 # local module name
