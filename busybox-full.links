@@ -163,3 +163,6 @@
 /bin/xargs
 /bin/yes
 /bin/zcat
+/sbin/cron
+/sbin/crontab
+/sbin/sendmail
